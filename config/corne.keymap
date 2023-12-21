@@ -134,7 +134,7 @@
         // IO = }
         io_rcb {
             timeout-ms = <50>;
-            key-positions =u <8 9>;
+            key-positions = <8 9>;
             bindings = <&kp RBRC>;
         };
 
