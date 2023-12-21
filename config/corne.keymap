@@ -179,16 +179,16 @@
 
         base {
             // -----------------------------------------------------------------------------------------
-            // |  TAB     |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP |
-            // |  LCTRL   |  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  ;  |  '   |
-            // | SHFT/ESC |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |  `   |
-            //                  | ALT | GUI | SYMS/SPC  |    | ENT/NUMS | NAVI/CAPS  | ALT |
+            // |  ESC   |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP    |
+            // |  TAB   |  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  ;  |  '      |
+            // |  LCTRL |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |  ADJS/` |
+            //                | ALT | GUI | SHFT/SPC  |    | ENT/NUMS | NAVI/CAPS  | SYMS/ALT |
 
             bindings = <
-                &kp TAB        &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-                &kp LCTRL      &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-                &mt LSHFT ESC  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp GRAVE
-                               &kp LALT  &kp LGUI  &lt SYMS SPACE       &lt NUMS RET  &lt NAVI CAPS  &kp RALT
+                &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &lt ADJS GRAVE
+                         &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt NUMS RET  &lt NAVI CAPS  &lt SYMS RALT
             >;
         };
 
@@ -198,7 +198,7 @@
             // |        |     |     |     |     |     |    |  *  |  4  |  5  |  6  |  +  |   =  |
             // |        |     |     |     |     |     |    |  /  |  1  |  2  |  3  |  -  |   .  |
             //                      |     |     |     |    |     |  0  |     |
-
+  
             bindings = <
                 &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6           &kp N7  &kp N8  &kp N9  &kp N0     &trans
                 &trans  &trans  &trans  &trans  &trans  &trans        &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp EQUAL
@@ -210,30 +210,30 @@
         syms {
             // -----------------------------------------------------------------------------------------
             // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
-            // |      |  -  |  +  |  [  |  ]  |  \  |   |     |     |     |     |     |      |
-            // |      |  _  |  =  |  {  |  }  | "|" |   |     |     |     |     |     |      |
+            // |      |     |     |     |     |     |   |     |  -  |  +  |  [  |  ]  |   \  |
+            // |      |     |     |     |     |     |   |     |  _  |  =  |  {  |  }  |      |
             //                    |     |     |     |   |     |     |     |
 
             bindings = <
-                &trans  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-                &trans  &kp MINUS  &kp PLUS  &kp LBKT  &kp RBKT  &kp BSLH       &trans     &trans    &trans           &trans    &trans    &trans
-                &trans  &kp UNDER  &kp EQUAL &kp LBRC  &kp RBRC  &kp PIPE       &trans     &trans    &trans           &trans    &trans    &trans
-                                             &trans    &trans    &trans         &trans     &trans    &trans
+                &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+                &trans  &trans    &trans  &trans    &trans    &trans           &trans     &kp MINUS  &kp PLUS         &kp LBKT  &kp RBKT  &kp BSLH 
+                &trans  &trans    &trans  &trans    &trans    &trans           &trans     &kp UNDER  &kp EQUAL        &kp LBRC  &kp RBRC  &trans
+                                          &trans    &trans    &trans           &trans     &trans     &trans
             >;
         };
 
         navi {
             // -----------------------------------------------------------------------------------------
-            // |       |  1  |  2  |  3  |  4  |  5  |    |  6  |  7  |  UP |  9  |  0  |      |
-            // |       |     |     |     |     |     |    |     | LFT | DWN | RGT |     |      |
-            // |       |     |     |     |     |     |    |     |     |     |     |     |      |
+            // |       |  1  |  2  |  3  |  4  |  5  |    |  6  |  7  |  8  |  9  |  0  |      |
+            // |       |     |     | UP  |     |     |    |     |     | UP  |     |     |      |
+            // |       |     | LFT | DWN | RGT |     |    |     | LFT | DWN | RGT |     |      |
             //                     |     |     |     |    |     |     |     |
 
             bindings = <
-                &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7    &kp UP    &kp N9     &kp N0  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans     &trans  &trans
-                                        &trans  &trans  &trans      &trans  &trans    &trans
+                &trans  &kp N1  &kp N2  &kp N3      &kp N4     &kp N5      &kp N6  &kp N7    &kp N8    &kp N9     &kp N0  &trans
+                &trans  &trans  &trans    &kp UP    &trans     &trans      &trans  &trans    &kp UP    &trans     &trans  &trans
+                &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+                                               &trans  &trans  &trans      &trans  &trans    &trans
             >;
         };
 
