@@ -8,43 +8,208 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+// Custom layer definitions
+#define DEFAULT 0
+#define NUMS 1
+#define SYMBOLS 2
+#define NAVI 3
+#define ADJS 4
+
 / {
+
+    // Tap Dance
+    behaviors {
+        // comma, colon, semicolon
+        tdcmclsc: tap_dance_cmclsc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp COLON>, <&kp SEMI>;
+        };
+        // single quote, double quote
+        tdsqdq: tap_dance_sqdq {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&kp DQT>;
+        };
+        // period, dash
+        tddtds: tap_dance_dtds {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&kp MINUS>;
+        };
+        // forward slash, backslash
+        tdfsbs: tap_dance_fsbs {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+        };
+        // underscore, tilde, backslash
+        tdutbs: tap_dance_utbs {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp UNDER>, <&kp TILDE>, <&kp BSLH>;
+        };
+        // double-tap LSHIFT to turn on CAPS WORD
+        tdcaps: td_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPDANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        // TAB+Q = ESC
+        esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+
+        // P+BACKSPACE = DEL
+        pbksp_del {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp DEL>;
+        };
+
+        // QW = CTRL+W
+        qw_ctrlw {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LC(W)>;
+        };
+        // QE = ALT+F4
+        qe_altf4 {
+            timeout-ms = <50>;
+            key-positions = <1 3>;
+            bindings = <&kp LA(F4)>;
+        };
+
+        // ZX = LEFTARROW
+        zx_left {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp LEFT>;
+        };
+        // CV = RIGHTARROW
+        cv_right {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp RIGHT>;
+        };
+
+        // SDF = UPARROW
+        sdf_up {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&kp UP>;
+        };
+        // XCV = DOWNARROW
+        xcv_down {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&kp DOWN>;
+        };
+
+
+        // YU = {
+        yu_lcb {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp LBRC>;
+        };
+        // IO = }
+        io_rcb {
+            timeout-ms = <50>;
+            key-positions =u <8 9>;
+            bindings = <&kp RBRC>;
+        };
+
+        
+        // HJ = [
+        hj_lsb {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp LBKT>;
+        };
+        // KL = ]
+        kl_rsb {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp RBKT>;
+        };
+
+        // NM = (
+        nm_lpar {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp LPAR>;
+        };
+        // ,. = )
+        ,._rpar {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp RPAR>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // |  ESC   |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP |
+            // |  TAB   |  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  ;  |  '   |
+            // |  CTRL  |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |  `   |
+            //                  | ALT | GUI | SPC/LWR |    | ENT/RSE | ALT | SHFT/CAPS |
 
             label = "Base";
             bindings = <
-&kp TAB        &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL      &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&mt LSHFT ESC  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp CAPS
-                             &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+                &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+                &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp GRAVE
+                       &kp LALT  &kp LGUI  &lt SYMBOLS SPACE        &lt NUMS RET  &lt NAV BSPC  &td tdcaps
             >;
         };
 
-        lower_layer {
+        nums {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |        |  1  |  2  |  3  |  4  |  5  |    |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // |        |     |     |     |     |     |    |  *  |  4  |  5  |  6  |  +  |   =  |
+            // |        |     |     |     |     |     |    |  /  |  1  |  2  |  3  |  -  |   .  |
+            //                      |     |     |     |    |     |  0  |     |
 
             label = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+                &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5        &kp N6           &kp N7  &kp N8  &kp N9  &kp N0     &kp BSPC
+                &trans  &trans  &trans  &trans  &trans  &trans        &kp KP_MULTIPLY  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp EQUAL
+                &trans  &trans  &trans  &trans  &trans  &trans        &kp FLSH         &kp N1  &kp N2  &kp N3  &kp MINUS  &kp DOT
+                                        &trans  &trans  &trans        &trans           &kp N0  &trans
             >;
         };
 
-        raise_layer {
+        symbols {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -53,11 +218,44 @@
 
             label = "Raise";
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+                &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+                &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+                &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
+
+        nav {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB  |  1  |  2  |  3  |  4  |  5  |    |  6  |  7  |  UP |  9  |  0  | BKSP |
+            // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |    |     | LFT | DWN | RGT |     |      |
+            // | SHFT  |     |     |     |     |     |    |     |     |     |     |     |      |
+            //                     | GUI |     | SPC |    | ENT |     | ALT |
+
+            label = "Lower";
+            bindings = <
+                &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+                &kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+                                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+            >;
+        };
+
+        adjs {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB  |  1  |  2  |  3  |  4  |  5  |    |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // |       | BT1 | BT2 | BT3 | BT4 | BT5 |    |     |     |     |     |     |      |
+            // |       |     |     |     |     |     |    |     |     |     |     |     |      |
+            //                     | GUI |     | SPC |    | ENT |     | ALT |
+
+            label = "Lower";
+            bindings = <
+                &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &trans    &trans    &trans     &trans  &trans
+                &trans      &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+                                                        &trans        &trans        &trans          &trans    &trans    $trans
+            >;
+        };
+
     };
 };
