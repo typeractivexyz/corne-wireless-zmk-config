@@ -71,7 +71,7 @@
         td_gvesc: tap_dance_gvesc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&kp GRAVE>, <&kp ESC>;
         };
 
