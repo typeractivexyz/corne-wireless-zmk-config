@@ -224,8 +224,8 @@
  
             bindings = <
                 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &trans
-                &trans  &trans    &trans  &trans    &trans    &trans           &trans     &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &trans 
-                &trans  &trans    &trans  &trans    &trans    &trans           &trans     &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &trans
+                &trans  &trans    &trans  &trans    &trans    &trans           &kp DOT    &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &trans 
+                &trans  &trans    &trans  &trans    &trans    &trans           &dp FSLH   &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &trans
                                           &trans    &trans    &trans           &trans     &trans     &trans
             >;
         };
