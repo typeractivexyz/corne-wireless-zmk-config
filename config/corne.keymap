@@ -68,7 +68,7 @@
         //     bindings = <&kp LSHFT>, <&caps_word>;
         // };
         // double-tap ` to ESC
-        td_gvesc: tap_dance_gvesc {
+        td_gresc: tap_dance_gresc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
@@ -193,7 +193,7 @@
             //                | ALT | GUI | SHFT/SPC  |        | NUMS/ENT | SYMS/BKSP | ADJS/ALT |
 
             bindings = <
-                &td_gvesc     &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
+                &td_gresc     &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
                 &lt NAVI TAB  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K          &kp L     &kp SEMI  &kp SQT
                 &kp LCTRL     &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA      &kp DOT   &kp FSLH  &kp BSLH
                             &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt NUMS RET  &lt SYMS BSPC  &lt ADJS RALT
