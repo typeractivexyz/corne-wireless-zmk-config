@@ -182,13 +182,13 @@
             // | ADJS/` |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP    |
             // |  TAB   |  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  ;  |  '      |
             // |  LCTRL |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |  \      |
-            //                | ALT | GUI | SHFT/SPC  |    | ENT/NUMS | SYMS/ESC  | NAVI/ALT |
+            //                | ALT | GUI | SHFT/SPC  |    | SYMS/ENT | NUMS/ESC  | NAVI/ALT |
 
             bindings = <
                 &lt ADJS GRAVE  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I         &kp O     &kp P     &kp BSPC
                 &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K         &kp L     &kp SEMI  &kp SQT
                 &kp LCTRL       &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA     &kp DOT   &kp FSLH  &kp BSLH
-                              &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt NUMS RET  &lt SYMS ESC  &lt NAVI  RALT
+                              &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt SYMS RET  &lt NUMS ESC  &lt NAVI  RALT
             >;
         };
 
