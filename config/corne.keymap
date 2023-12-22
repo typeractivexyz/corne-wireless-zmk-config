@@ -179,10 +179,10 @@
 
         base {
             // -----------------------------------------------------------------------------------------
-            // | `/ESC  |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP    |
-            // |NAVI/TAB|  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  ;  |  '      |
-            // |  LCTRL |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |  \      |
-            //                | ALT | GUI | SHFT/SPC  |    | SYMS/ENT | NUMS/BKSP | ADJS/ALT |
+            // | `/ESC  |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U  |  I  |  O  |  P  | BKSP    |
+            // |NAVI/TAB|  A  |  S  |  D  |  F  |  G  |        |  H  |  J  |  K  |  L  |  ;  |  '      |
+            // |  LCTRL |  Z  |  X  |  C  |  V  |  B  |        |  N  |  M  |  ,  |  .  |  /  |  \      |
+            //                | ALT | GUI | SHFT/SPC  |        | SYMS/ENT | NUMS/BKSP | ADJS/ALT |
 
             bindings = <
                 &gresc        &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
@@ -194,10 +194,10 @@
 
         nums {
             // -----------------------------------------------------------------------------------------
-            // |        |  !  |  @  |  #  |  $  |  %  |    |  ^  |  7  |  8  |  9  |  =  |     |
-            // |   F1   | F2  | F3  | F4  | F5  | F6  |    |  .  |  4  |  5  |  6  |  -  |  +  |
-            // |   F7   | F8  | F9  | F10 | F11 | F12 |    |  0  |  1  |  2  |  3  |  /  |  *  |
-            //                      |     |     |     |    |     |     |     |
+            // |        |  !  |  @  |  #  |  $  |  %  |        |  ^  |  7  |  8  |  9  |  =  |     |
+            // |   F1   | F2  | F3  | F4  | F5  | F6  |        |  .  |  4  |  5  |  6  |  -  |  +  |
+            // |   F7   | F8  | F9  | F10 | F11 | F12 |        |  0  |  1  |  2  |  3  |  /  |  *  |
+            //                      |     |     |     |        |     |     |     |
   
             bindings = <
                 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET  &kp N7  &kp N8  &kp N9  &kp EQUAL  &trans
@@ -209,10 +209,10 @@
 
         syms {
             // -----------------------------------------------------------------------------------------
-            // |        |  !  |  @  |  #  |  $  |  %  |    |  ^  |  &  |  *  |  (  |  )  |      |
-            // |        |     |     |     |     |     |    |     |  -  |  +  |  [  |  ]  |      |
-            // |        |     |     |     |     |     |    |     |  _  |  =  |  {  |  }  |      |
-            //                      |     |     |     |    |     |     |     |
+            // |        |  !  |  @  |  #  |  $  |  %  |        |  ^  |  &  |  *  |  (  |  )  |      |
+            // |        |     |     |     |     |     |        |     |  -  |  +  |  [  |  ]  |      |
+            // |        |     |     |     |     |     |        |     |  _  |  =  |  {  |  }  |      |
+            //                      |     |     |     |        |     |     |     |
  
             bindings = <
                 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &trans
@@ -224,10 +224,10 @@
 
         navi {
             // -----------------------------------------------------------------------------------------
-            // |        |     |     | UP  |     |     |    |     |     | UP  |     |     |      |
-            // |        |     | LFT | DWN | RGT |     |    |     | LFT | DWN | RGT |     |      |
-            // |        |     |     |     |     |     |    |     |     |     |     |     |      |
-            //                      |     |     |     |    |     |     |     |
+            // |        |     |     | UP  |     |     |        |     |     | UP  |     |     |      |
+            // |        |     | LFT | DWN | RGT |     |        |     | LFT | DWN | RGT |     |      |
+            // |        |     |     |     |     |     |        |     |     |     |     |     |      |
+            //                      |     |     |     |        |     |     |     |
 
             bindings = <
                 &trans  &trans  &trans    &kp UP    &trans     &trans      &trans  &trans  &trans    &kp UP    &trans     &trans
@@ -239,10 +239,10 @@
 
         adjs {
             // -----------------------------------------------------------------------------------------
-            // |        |     |     |     |     |     |    | BT1 | BT2 | BT3 | BT4 | BT5 | BT_CLR |
-            // |        |     |     |     |     |     |    |  PP |VOLUP|VOLDN|MUTE |     |        |      
-            // |        |     |     |     |     |     |    |     |     |     |     |     |        |
-            //                      |     |     |     |    |     |     |     |
+            // |        |     |     |     |     |     |        | BT1 | BT2 | BT3 | BT4 | BT5 | BT_CLR |
+            // |        |     |     |     |     |     |        |  PP |VOLUP|VOLDN|MUTE |     |        |      
+            // |        |     |     |     |     |     |        |     |     |     |     |     |        |
+            //                      |     |     |     |        |     |     |     |
 
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans        &kp BT_SEL 0  &kp BT_SEL 1  &kp BT_SEL 2  &kp BT_SEL 3  &kp BT_SEL 4  &kp BT_CLR
