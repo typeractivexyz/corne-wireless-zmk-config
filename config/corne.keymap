@@ -232,16 +232,16 @@
 
         navi {
             // -----------------------------------------------------------------------------------------
-            // |        |     |     | UP  |     |     |        |     |     | UP  |     |     |      |
+            // |        |     |PG_DN| UP  |PG_UP|     |        |     |PG_DN| UP  |PG_UP|     |      |
             // |        |     | LFT | DWN | RGT |     |        |     | LFT | DWN | RGT |     |      |
             // |        |     |     |     |     |     |        |     |     |     |     |     |      |
             //                      |     |     |     |        |     |     |     |
 
             bindings = <
-                &trans  &trans  &trans    &kp UP    &trans     &trans      &trans  &trans    &kp UP    &trans     &trans  &trans
-                &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-                &trans  &trans  &trans    &trans    &trans     &trans      &trans  &trans    &trans    &trans     &trans  &trans
-                                               &trans  &trans  &trans      &trans  &trans    &trans
+                &trans  &trans  &kp PG_DN  &kp UP    &kp PG_UP  &trans      &trans  &kp PG_DN  &kp UP    &kp PG_UP  &trans  &trans
+                &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans      &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
+                &trans  &trans  &trans     &trans    &trans     &trans      &trans  &trans     &trans    &trans     &trans  &trans
+                                               &trans  &trans   &trans      &trans  &trans     &trans
             >;
         };
 
