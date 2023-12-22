@@ -188,15 +188,15 @@
         base {
             // ------------------------------------------------------------------------------------------
             // | `/ESC   |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U  |  I  |  O  |  P  | BKSP    |
-            // |  LCTRL  |  A  |  S  |  D  |  F  |  G  |        |  H  |  J  |  K  |  L  |  ;  |  '      |
-            // |LSHFT/TAB|  Z  |  X  |  C  |  V  |  B  |        |  N  |  M  |  ,  |  .  |  /  |  \      |
-            //               | LALT | LGUI | NAVI/SPC  |        | NUMS/ENT | SYMS/RGUI | ADJS/RALT |
+            // | NAVI/TAB|  A  |  S  |  D  |  F  |  G  |        |  H  |  J  |  K  |  L  |  ;  |  '      |
+            // |  LCTRL  |  Z  |  X  |  C  |  V  |  B  |        |  N  |  M  |  ,  |  .  |  /  |  \      |
+            //               | LALT | LGUI | LSHFT/SPC |        | NUMS/ENT | SYMS/RGUI | ADJS/RALT |
 
             bindings = <
-                &td_gresc      &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
-                &kp LCTRL      &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K          &kp L     &kp SEMI  &kp SQT
-                &mt LSHFT TAB  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA      &kp DOT   &kp FSLH  &kp BSLH
-                              &kp LALT  &kp LGUI  &lt NAVI SPACE        &lt NUMS RET  &lt SYMS RGUI  &lt ADJS RALT
+                &td_gresc     &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
+                &lt NAVI TAB  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K          &kp L     &kp SEMI  &kp SQT
+                &kp LCTRL     &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA      &kp DOT   &kp FSLH  &kp BSLH
+                            &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt NUMS RET  &lt SYMS BSPC  &lt ADJS RALT
             >;
         };
 
