@@ -68,7 +68,7 @@
             bindings = <&kp LSHFT>, <&caps_word>;
         };
         // double-tap ` to ESC
-        tdcaps: td_gvesc {
+        td_gvesc: tap_dance_gvesc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
