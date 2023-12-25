@@ -11,54 +11,13 @@
 // Custom layer definitions
 #define BASE 0
 #define NUMS 1
-#define SYMS 2
-#define NAVI 3
-#define ADJS 4
+#define NAVI 2
+#define ADJS 3
 
 / {
 
     // Tap Dance
     behaviors {
-        // // comma, colon, semicolon
-        // tdcmclsc: tap_dance_cmclsc {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_0";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp COMMA>, <&kp COLON>, <&kp SEMI>;
-        // };
-        // // single quote, double quote
-        // tdsqdq: tap_dance_sqdq {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_1";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp SQT>, <&kp DQT>;
-        // };
-        // // period, dash
-        // tddtds: tap_dance_dtds {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_2";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp DOT>, <&kp MINUS>;
-        // };
-        // // forward slash, backslash
-        // tdfsbs: tap_dance_fsbs {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_3";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp FSLH>, <&kp BSLH>;
-        // };
-        // // underscore, tilde, backslash
-        // tdutbs: tap_dance_utbs {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TAP_DANCE_4";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp UNDER>, <&kp TILDE>, <&kp BSLH>;
-        // };
         // // double-tap LSHIFT to turn on CAPS WORD
         // tdcaps: td_caps_word {
         //     compatible = "zmk,behavior-tap-dance";
@@ -93,92 +52,60 @@
             bindings = <&kp DEL>;
         };
 
-        // // QW = CTRL+W
-        // qw_ctrlw {
-        //     timeout-ms = <50>;
-        //     key-positions = <1 2>;
-        //     bindings = <&kp LC(W)>;
-        // };
-        // // QE = ALT+F4
-        // qe_altf4 {
-        //     timeout-ms = <50>;
-        //     key-positions = <1 3>;
-        //     bindings = <&kp LA(F4)>;
-        // };
-
-        // // ZX = LEFTARROW
-        // zx_left {
-        //     timeout-ms = <50>;
-        //     key-positions = <25 26>;
-        //     bindings = <&kp LEFT>;
-        // };
-        // // CV = RIGHTARROW
-        // cv_right {
-        //     timeout-ms = <50>;
-        //     key-positions = <27 28>;
-        //     bindings = <&kp RIGHT>;
-        // };
-
-        // // SDF = UPARROW
-        // sdf_up {
-        //     timeout-ms = <50>;
-        //     key-positions = <14 15 16>;
-        //     bindings = <&kp UP>;
-        // };
-        // // XCV = DOWNARROW
-        // xcv_down {
-        //     timeout-ms = <50>;
-        //     key-positions = <26 27 28>;
-        //     bindings = <&kp DOWN>;
-        // };
+        // QE = ALT+F4
+        qe_altf4 {
+            timeout-ms = <50>;
+            key-positions = <1 3>;
+            bindings = <&kp LA(F4)>;
+        };
 
 
-        // // YU = {
-        // yu_lcb {
-        //     timeout-ms = <50>;
-        //     key-positions = <6 7>;
-        //     bindings = <&kp LBRC>;
-        // };
-        // // IO = }
-        // io_rcb {
-        //     timeout-ms = <50>;
-        //     key-positions = <8 9>;
-        //     bindings = <&kp RBRC>;
-        // };
+        // IO = (
+        io_lpar {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp LPAR>;
+        };
+        // OP = )
+        op_rpar {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp RPAR>;
+        };
 
-        
-        // // HJ = [
-        // hj_lsb {
-        //     timeout-ms = <50>;
-        //     key-positions = <18 19>;
-        //     bindings = <&kp LBKT>;
-        // };
-        // // KL = ]
-        // kl_rsb {
-        //     timeout-ms = <50>;
-        //     key-positions = <20 21>;
-        //     bindings = <&kp RBKT>;
-        // };
+        // HJ = [
+        jk_lbkt {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp LBKT>;
+        };
+        // KL = ]
+        kl_rbkt {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp RBKT>;
+        };
 
-        // // NM = (
-        // nm_lpar {
-        //     timeout-ms = <50>;
-        //     key-positions = <30 31>;
-        //     bindings = <&kp LPAR>;
-        // };
-        // // ,. = )
-        // ,._rpar {
-        //     timeout-ms = <50>;
-        //     key-positions = <32 33>;
-        //     bindings = <&kp RPAR>;
-        // };
+        // NM = {
+        m,_lbrc {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp LBKT>;
+        };
+        // ,. = }
+        ,._rbrc {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp RBKT>;
+        };
+
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
-            then-layer = <4>;
+            then-layer = <3>;
         };
     };
 
@@ -187,46 +114,31 @@
 
         base {
             // ------------------------------------------------------------------------------------------
-            // | `/ESC   |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U  |  I  |  O  |  P  | BSPC    |
-            // | NAVI/TAB|  A  |  S  |  D  |  F  |  G  |        |  H  |  J  |  K  |  L  |  ;  |  '      |
+            // | ` ESC   |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U  |  I  |  O  |  P  | BSPC    |
+            // | NAVI TAB|  A  |  S  |  D  |  F  |  G  |        |  H  |  J  |  K  |  L  |  ;  | NAVI '  |
             // |  LCTRL  |  Z  |  X  |  C  |  V  |  B  |        |  N  |  M  |  ,  |  .  |  /  |  \      |
-            //               | LALT | LGUI | LSHFT/SPC |        | NUMS/ENT | SYMS/BSPC | ADJS/RALT |
+            //                | LALT | LGUI | NUMS SPC |        | NAVI ENT | SHFT |ADJS RALT|
 
             bindings = <
-                &td_gresc     &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I          &kp O     &kp P     &kp BSPC
-                &lt NAVI TAB  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K          &kp L     &kp SEMI  &kp SQT
-                &kp LCTRL     &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA      &kp DOT   &kp FSLH  &kp BSLH
-                            &kp LALT  &kp LGUI  &mt LSHFT SPACE        &lt NUMS RET  &lt SYMS BSPC  &lt ADJS RALT
+                &td_gresc     &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I      &kp O    &kp P     &kp DEL
+                &lt NAVI TAB  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LCTRL     &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                            &kp LALT  &kp LGUI  &mt NUMS SPACE        &lt NAVI RET  &kp LSHFT  &lt ADJS RALT
             >;
         };
 
         nums {
             // -----------------------------------------------------------------------------------------
-            // |         |  !  |  @  |  #  |  $  |  %  |        |  ^  |  7  |  8  |  9  |  =  |     |
-            // |   F1    | F2  | F3  | F4  | F5  | F6  |        |  .  |  4  |  5  |  6  |  -  |  +  |
-            // |   F7    | F8  | F9  | F10 | F11 | F12 |        |  0  |  1  |  2  |  3  |  /  |  *  |
+            // |         |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  |     |
+            // |   F1    | F2  | F3  | F4  | F5  | F6  |        |     |  -_ |  =+ |  [{ |  ]} |  '" |
+            // |   F7    | F8  | F9  | F10 | F11 | F12 |        |     |     |  ,< |  .> |  /? |  \| |
             //                       |     |     |     |        |     |     |     |
   
             bindings = <
-                &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET  &kp N7  &kp N8  &kp N9  &kp EQUAL  &trans
-                &kp F1  &kp F2    &kp F3  &kp F4    &kp F5    &kp F6          &kp DOT    &kp N4  &kp N5  &kp N6  &kp MINUS  &kp PLUS
-                &kp F7  &kp F8    &kp F9  &kp F10   &kp F11   &kp F12         &kp N0     &kp N1  &kp N2  &kp N3  &kp FSLH   &kp STAR
-                                          &trans    &trans    &trans          &trans     &kp N0  &trans
-            >;
-        };
-
-        syms {
-            // -----------------------------------------------------------------------------------------
-            // |         |  !  |  @  |  #  |  $  |  %  |        |  ^  |  &  |  *  |  (  |  )  |      |
-            // |         |     |     |     |     |     |        |  .  |  -  |  +  |  [  |  ]  |      |
-            // |         |     |     |     |     |     |        |  /  |  _  |  =  |  {  |  }  |      |
-            //                       |     |     |     |        |     |     |     |
- 
-            bindings = <
-                &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT        &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &trans
-                &trans  &trans    &trans  &trans    &trans    &trans           &kp DOT    &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &trans 
-                &trans  &trans    &trans  &trans    &trans    &trans           &kp FSLH   &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &trans
-                                          &trans    &trans    &trans           &trans     &trans     &trans
+                &trans  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5          &kp N6   &kp N7     &kp N8     &kp N9    &kp N0    &trans
+                &kp F1  &kp F2    &kp F3  &kp F4    &kp F5    &kp F6          &kp DOT  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &trans 
+                &kp F7  &kp F8    &kp F9  &kp F10   &kp F11   &kp F12         &trans   &trans     &kp COMMA  &kp DOT   &kp FSLH  &kp BSLH
+                                          &trans    &trans    &trans          &trans   &kp N0     &trans
             >;
         };
 
@@ -234,13 +146,13 @@
             // -----------------------------------------------------------------------------------------
             // |         |     |PG_DN| UP  |PG_UP|     |        |     |PG_DN| UP  |PG_UP|     |      |
             // |         |     | LFT | DWN | RGT |     |        |     | LFT | DWN | RGT |     |      |
-            // |         |     |     |     |     |     |        |     |     |     |     |     |      |
+            // |         |     |     |     |     |     |        |     |  PP |MUTE |VOLDN|VOLUP|      |
             //                       |     |     |     |        |     |     |     |
 
             bindings = <
-                &trans  &trans  &kp PG_DN  &kp UP    &kp PG_UP  &trans      &trans  &kp PG_DN  &kp UP    &kp PG_UP  &trans  &trans
-                &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans      &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
-                &trans  &trans  &trans     &trans    &trans     &trans      &trans  &trans     &trans    &trans     &trans  &trans
+                &trans  &trans  &kp PG_DN  &kp UP    &kp PG_UP  &trans      &trans  &kp PG_DN  &kp UP      &kp PG_UP     &trans        &trans
+                &trans  &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans      &trans  &kp LEFT   &kp DOWN    &kp RIGHT     &trans        &trans
+                &trans  &trans  &trans     &trans    &trans     &trans      &trans  &kp K_PP   &kp K_MUTE  &kp K_VOL_DN  &kp K_VOL_UP  &trans
                                                 &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
@@ -254,7 +166,7 @@
 
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-                &trans  &trans  &trans  &trans  &trans  &trans        &kp K_PP      &kp K_VOL_UP  &kp C_VOL_DN  &kp K_MUTE    &trans        &trans
+                &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans        &trans
                 &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans        &trans
                                         &trans  &trans  &trans        &trans  &trans  &trans
             >;
