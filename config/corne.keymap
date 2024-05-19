@@ -37,9 +37,9 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB       &trans    &kp PAGE_DOWN  &kp UP     &kp PAGE_UP     &kp C_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL  &kp BSPC
-&trans        &kp HOME  &kp LEFT       &kp DOWN   &kp RIGHT       &kp END              &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp N0     &trans
-&kp LEFT_GUI  &trans    &trans         &kp LC(C)  &kp LC(V)       &kp C_VOLUME_DOWN    &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans     &trans
+&kp TAB       &trans    &kp PAGE_DOWN  &kp UP     &kp PAGE_UP     &kp C_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL        &kp BSPC
+&trans        &kp HOME  &kp LEFT       &kp DOWN   &kp RIGHT       &kp END              &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
+&kp LEFT_GUI  &trans    &trans         &kp LC(C)  &kp LC(V)       &kp C_VOLUME_DOWN    &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans           &trans
                                        &trans     &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC         &kp RALT
             >;
         };
