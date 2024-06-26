@@ -53,10 +53,10 @@
 
             display-name = "Raise";
             bindings = <
-&kp TAB    &kp CARET  &kp AMPERSAND  &kp LESS_THAN  &kp GREATER_THAN  &kp EXCL             &kp EQUAL  &kp PLUS               &kp MINUS        &kp KP_MULTIPLY    &kp KP_DIVIDE  &trans
-&kp LCTRL  &kp GRAVE  &kp UNDER      &kp COMMA      &kp DOT           &kp DOUBLE_QUOTES    &kp MINUS  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp BSLH       &kp GRAVE
-&tog 3     &kp SEMI   &kp COLON      &kp TILDE      &kp PERCENT       &kp AT               &trans     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PIPE       &kp DEL
-                                     &kp LGUI       &kp LEFT_SHIFT    &kp SPACE            &kp RET    &kp BACKSPACE          &trans
+&kp TAB    &kp CARET  &kp AMPERSAND  &kp LESS_THAN  &kp GREATER_THAN  &kp EXCL             &kp EQUAL   &kp PLUS               &kp MINUS        &kp KP_MULTIPLY    &kp KP_DIVIDE  &trans
+&kp LCTRL  &kp GRAVE  &kp UNDER      &kp COMMA      &kp DOT           &kp DOUBLE_QUOTES    &kp MINUS   &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp BSLH       &kp GRAVE
+&tog 3     &kp SEMI   &kp COLON      &kp TILDE      &kp PERCENT       &kp AT               &kp DOLLAR  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PIPE       &kp DEL
+                                     &kp LGUI       &kp LEFT_SHIFT    &kp SPACE            &kp RET     &kp BACKSPACE          &trans
             >;
         };
 
