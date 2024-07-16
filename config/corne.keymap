@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         wasd {
-            bindings = <&tog 4>;
+            bindings = <&to 4>;
             key-positions = <24 12 35 23>;
         };
 
