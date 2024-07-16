@@ -9,6 +9,20 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        wasd {
+            bindings = <&tog 4>;
+            key-positions = <24 12 35 23>;
+        };
+
+        home_row_numbers {
+            bindings = <&mo 5>;
+            key-positions = <36 41>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -67,6 +81,25 @@
 &bt BT_CLR  &bt BT_CLR_ALL  &trans        &trans        &trans        &trans          &kp MINUS  &kp EQUAL      &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &tog 3      &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp UNDER  &kp PLUS       &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                                           &to 0         &trans        &kp SPACE       &kp RET    &kp BACKSPACE  &kp RALT
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp LALT
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp ESC
+&kp LGUI   &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
+                         &mo 1  &kp LSHFT  &kp SPACE    &kp ENTER  &kp BSPC  &tog 4
+            >;
+        };
+
+        layer_5 {
+            display-name = "Lower";
+            bindings = <
+&kp TAB    &trans  &kp PAGE_DOWN  &kp UP    &kp PAGE_UP     &kp C_VOLUME_UP      &kp EQUAL  &kp PLUS  &kp MINUS  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp LALT
+&kp LCTRL  &kp N1  &kp N2         &kp N3    &kp N4          &kp N5               &kp N6     &kp N7    &kp N8     &kp N9           &kp N0         &kp ESC
+&kp LGUI   &trans  &kp LEFT       &kp DOWN  &kp RIGHT       &kp C_VOLUME_DOWN    &kp DOT    &trans    &trans     &trans           &trans         &kp DEL
+                                  &trans    &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC  &trans
             >;
         };
     };
