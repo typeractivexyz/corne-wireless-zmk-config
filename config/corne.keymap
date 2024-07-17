@@ -95,10 +95,10 @@
 
         layer_6 {
             bindings = <
-&kp TAB    &kp GRAVE  &kp Q  &kp W   &kp E  &kp R        &kp T      &kp Y     &kp U   &kp I      &kp O    &kp P
-&kp LCTRL  &kp LSHFT  &kp A  &kp S   &kp D  &kp F        &kp G      &kp H     &kp J   &kp K      &kp L    &kp ESC
-&kp LALT   &trans     &kp Z  &kp X   &kp C  &kp V        &kp B      &kp N     &kp M   &kp COMMA  &kp DOT  &kp DEL
-                             &trans  &mo 6  &kp SPACE    &kp ENTER  &kp BSPC  &trans
+&kp TAB    &kp GRAVE  &kp Q  &kp W  &kp E  &kp R        &kp T      &kp Y     &kp U   &kp I      &kp O    &kp P
+&kp LCTRL  &kp LSHFT  &kp A  &kp S  &kp D  &kp F        &kp G      &kp H     &kp J   &kp K      &kp L    &kp ESC
+&kp LALT   &trans     &kp Z  &kp X  &kp C  &kp V        &kp B      &kp N     &kp M   &kp COMMA  &kp DOT  &kp DEL
+                             &sl 6  &mo 6  &kp SPACE    &kp ENTER  &kp BSPC  &trans
             >;
         };
 
