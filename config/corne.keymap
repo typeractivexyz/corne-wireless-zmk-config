@@ -28,15 +28,15 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     | MC  |   |  1  |  2  |  3  |    |    | BKSP |
-// |      | LFT | DWN |  UP | RGT | MUT |   |  4  |  5  |  6  |    |    | CTRL |
-// | SHFT |  PRE| PPA | NEX |  VU |  VD |   |  7  |  8  |   9 |  0 |    | ESC |
+// |  TAB | FAV | LAB | AWS | GIT | MC  |   |  1  |  2  |  3  | CPY | PST | BKSP | 
+// |      | LFT | DWN |  UP | RGT | MUT |   |  4  |  5  |  6  | CUT |     | CTRL |
+// | SHFT |  PRE| PPA | NEX |  VU |  VD |   |  7  |  8  |   9 |  0  |     | ESC  |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         display-name = "Lower";
                         bindings = <
-   &kp TAB    &trans       &trans       &trans       &trans       &kp LG(LC(W))         &kp N1   &kp N2   &kp N3       &trans          &trans  &kp BSPC
-   &trans     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp C_MUTE            &kp N4   &kp N5   &kp N6       &trans          &trans  &kp RCTRL
-   &kp LSHFT  &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp C_VOL_UP &kp C_VOL_DN          &kp N7   &kp N8   &kp N9       &kp N0          &trans  &kp ESC
+   &kp TAB    &kp LG(LC(F) &kp LG(LC(L) &kp LG(LC(A) &kp LG(LC(G) &kp LG(LC(W))         &kp N1   &kp N2   &kp N3       &kp LG(C))      &kp LG(V)      &kp BSPC
+   &trans     &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &kp C_MUTE            &kp N4   &kp N5   &kp N6       &kp LG(X))      &kp LG(LS(P))  &kp RCTRL
+   &kp LSHFT  &kp C_PREV   &kp C_PP     &kp C_NEXT   &kp C_VOL_UP &kp C_VOL_DN          &kp N7   &kp N8   &kp N9       &kp N0          &trans         &kp ESC
                           	        &kp LGUI     &trans       &kp SPACE             &kp RET  &trans   &kp RALT
                         >;
                 };
