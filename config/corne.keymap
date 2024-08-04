@@ -113,9 +113,106 @@
     combos {
         compatible = "zmk,combos";
 
-        right_combo {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <22 21>;
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&kp ESCAPE>;
+        };
+
+        combo_bksp {
+            timeout-ms = <50>;
+            key-positions = <10 9 8>;
+            bindings = <&kp BACKSPACE>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <13 14 15>;
+        };
+
+        combo_shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <25 26 27>;
+        };
+
+        combo_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <21 22 20>;
+        };
+
+        combo_rshift {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <33 34 32>;
+        };
+
+        exclm {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <1 13>;
+        };
+
+        at {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <2 14>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <3 15>;
+        };
+
+        dllr {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 16>;
+        };
+
+        percnt {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 17>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <6 18>;
+        };
+
+        and {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <7 19>;
+        };
+
+        str {
+            bindings = <&kp ASTERISK>;
+            key-positions = <8 20>;
+        };
+
+        leftparen {
+            bindings = <&kp LPAR>;
+            key-positions = <9 21>;
+        };
+
+        rparen {
+            bindings = <&kp RPAR>;
+            key-positions = <10 22>;
+        };
+
+        layout_switch {
+            bindings = <&tog 4>;
+            key-positions = <36 37 40 41>;
+        };
+
+        system_reset {
+            bindings = <&sys_reset>;
+            key-positions = <3 4 5 14>;
+        };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <15 16 17 26>;
+        };
+
+        system_layer_combo {
+            bindings = <&mo 3>;
+            key-positions = <36 37 38>;
         };
     };
 
