@@ -194,26 +194,6 @@
             bindings = <&kp RPAR>;
             key-positions = <10 22>;
         };
-
-        layout_switch {
-            bindings = <&tog 4>;
-            key-positions = <36 37 40 41>;
-        };
-
-        system_reset {
-            bindings = <&sys_reset>;
-            key-positions = <3 4 5 14>;
-        };
-
-        bootloader {
-            bindings = <&bootloader>;
-            key-positions = <15 16 17 26>;
-        };
-
-        system_layer_combo {
-            bindings = <&mo 3>;
-            key-positions = <36 37 38>;
-        };
     };
 
     keymap {
