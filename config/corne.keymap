@@ -16,7 +16,8 @@
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <150>;
-                        bindings = <&kp>, <&kp>;
+                        require-prior-idle-ms = <125>;
+                        bindings = <&kp>, <&kp>; 
                 };
         };
         
