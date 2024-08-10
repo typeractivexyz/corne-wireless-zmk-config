@@ -9,6 +9,65 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        combo {
+                compatible = "zmk,combo";
+               
+                l_parenthesis {
+                bindings = <&kp LEFT_PARENTHESIS>;
+                key-positions = <15 20>;
+                require-prior-idle-ms = <150>;
+
+                r_parenthesis {
+                bindings = <&kp RIGHT_PARENTHESIS>;
+                key-positions = <14 21>;
+                require-prior-idle-ms = <150>;
+
+                l_bracket {
+                bindings = <&kp LEFT_BRACKET>;
+                key-positions = <16 19>;
+                require-prior-idle-ms = <150>;
+
+                r_bracket {
+                bindings = <&kp RIGHT_BRACKET>;
+                key-positions = <13 22>;
+                require-prior-idle-ms = <150>;
+
+                l_brace {
+                bindings = <&kp LEFT_BRACE>;
+                key-positions = <17 18>;
+                require-prior-idle-ms = <150>;
+
+                r_brace {
+                bindings = <&kp RIGHT_BRACE>;
+                key-positions = <12 23>;
+                require-prior-idle-ms = <150>;
+
+                colon {
+                bindings = <&kp COLON>;
+                key-positions = <28 31>;
+                require-prior-idle-ms = <150>;
+
+                equals {
+                bindings = <&kp EQUAL>;
+                key-positions = <27 32>;
+                require-prior-idle-ms = <150>;
+
+                hash { 
+                bindings = <&kp HASH>;
+                key-positions = <26 33>;
+                require-prior-idle-ms = <150>;
+
+                
+
+
+
+
+        };
+        };
+        };
+}
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
