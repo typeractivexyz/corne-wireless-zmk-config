@@ -11,25 +11,21 @@
 / {      
         behaviors {
                 ht: hold_tap {
-                        label = "hold_tap";
                         compatible = "zmk,behavior-hold-tap";
-                        #bindings-cells = <2>;
+                        #binding-cells = <2>;
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <150>;
-                        global-quick-tap;
                         bindings = <&kp>, <&kp>;
 
                 };
 
                  hts: hold_tap_single {
-                        label = "hold_tap_single";
                         compatible = "zmk,behavior-hold-tap";
-                        #bindings-cells = <1>;
+                        #binding-cells = <1>;
                         flavor = "tap-preferred";
                         tapping-term-ms = <200>;
                         quick-tap-ms = <150>;
-                        global-quick-tap;
                         bindings = <&kp>;
 
                 };
