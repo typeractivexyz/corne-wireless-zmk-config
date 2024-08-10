@@ -9,6 +9,36 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        behaviors {
+                hml: hm {
+                compatible = "zmk,behavior-hold-tap";
+                label = "Homerow mods left";
+                bindings = <&kp>, <&kp>;
+
+                #binding-cells = <2>;
+                tapping-term-ms = <280>;
+                quick-tap-ms = <175>;
+                flavor = "balanced";
+                require-prior-idle-ms = <150>;
+                hold-trigger-on-release;
+                hold-trigger-key-positions = <12 13 14 15 16 17 26 27 28>;
+                };
+
+                hmr: hm {
+                compatible = "zmk,behavior-hold-tap";
+                label = "Homerow mods right";
+                bindings = <&kp>, <&kp>;
+
+                #binding-cells = <2>;
+                tapping-term-ms = <280>;
+                quick-tap-ms = <175>;
+                flavor = "balanced";
+                require-prior-idle-ms = <150>;
+                hold-trigger-on-release;
+                hold-trigger-key-positions = <18 19 20 21 22 23 31 32 33>;
+                };
+        };
+        
         combo {
                 compatible = "zmk,combo";
                
@@ -16,56 +46,58 @@
                 bindings = <&kp LEFT_PARENTHESIS>;
                 key-positions = <15 20>;
                 require-prior-idle-ms = <150>;
+                };
 
                 r_parenthesis {
                 bindings = <&kp RIGHT_PARENTHESIS>;
                 key-positions = <14 21>;
                 require-prior-idle-ms = <150>;
+                };
 
                 l_bracket {
                 bindings = <&kp LEFT_BRACKET>;
                 key-positions = <16 19>;
                 require-prior-idle-ms = <150>;
+                };
 
                 r_bracket {
                 bindings = <&kp RIGHT_BRACKET>;
                 key-positions = <13 22>;
                 require-prior-idle-ms = <150>;
+                };
 
                 l_brace {
                 bindings = <&kp LEFT_BRACE>;
                 key-positions = <17 18>;
                 require-prior-idle-ms = <150>;
+                };
 
                 r_brace {
                 bindings = <&kp RIGHT_BRACE>;
                 key-positions = <12 23>;
                 require-prior-idle-ms = <150>;
+                };
 
                 colon {
                 bindings = <&kp COLON>;
                 key-positions = <28 31>;
                 require-prior-idle-ms = <150>;
+                };
 
                 equals {
                 bindings = <&kp EQUAL>;
                 key-positions = <27 32>;
                 require-prior-idle-ms = <150>;
+                };
 
                 hash { 
                 bindings = <&kp HASH>;
                 key-positions = <26 33>;
                 require-prior-idle-ms = <150>;
-
-                
-
-
-
-
+                };
         };
-        };
-        };
-}
+
+};
 
 / {
         keymap {
