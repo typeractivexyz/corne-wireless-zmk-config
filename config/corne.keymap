@@ -17,17 +17,6 @@
                         tapping-term-ms = <200>;
                         quick-tap-ms = <150>;
                         bindings = <&kp>, <&kp>;
-
-                };
-
-                 hts: hold_tap_single {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <1>;
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <150>;
-                        bindings = <&kp>;
-
                 };
         };
         
