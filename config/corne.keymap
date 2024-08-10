@@ -14,7 +14,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <250>;
                         quick-tap-ms = <150>;
                         require-prior-idle-ms = <125>;
                         bindings = <&kp>, <&kp>; 
@@ -93,10 +93,10 @@
 //                    | GUI | LWR | SPC |   | CTRL | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
-   &kp TAB        &kp Q      &kp W      &kp E      &kp R      &kp T           &kp Y &ht N1 U  &ht N2 I     &ht N3 O   &kp P       &kp BSPC
-   &ht LBRC LCTRL &ht LBKT A &ht LPAR S &ht RPAR D &ht RBKT F &ht RBRC G      &kp H &ht N4 J  &ht N5 K     &ht N6 L   &kp SEMI    &kp SQT
-   &kp LSHFT      &kp Z      &kp X      &kp C      &kp V      &kp B           &kp N &ht N7 M  &ht N8 COMMA &ht N9 DOT &ht N0 FSLH &ht RSHIFT ESC
-                  &kp LGUI &mo 1 &kp SPACE      &kp RCTRL &mo 2 &kp RALT
+   &kp TAB        &kp Q           &kp W         &kp E              &kp R            &kp T               &kp Y &ht N1 U  &ht N2 I     &ht N3 O   &kp P       &kp BSPC
+   &ht LBRC LCTRL &ht LBKT A      &ht LPAR S    &ht RPAR D         &ht RBKT F       &ht RBRC G          &kp H &ht N4 J  &ht N5 K     &ht N6 L   &kp SEMI    &kp SQT
+   &kp LSHFT      &ht  UNDER Z    &ht EQUAL X   &ht KP_MULTIPLY C  &ht MINUS V      &ht TILDE B               &kp N &ht N7 M  &ht N8 COMMA &ht N9 DOT &ht N0 FSLH &ht RSHIFT ESC
+                  &kp LGUI &mo 1 &kp SPACE                                                              &kp RCTRL &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {
