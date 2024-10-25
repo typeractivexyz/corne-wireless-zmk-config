@@ -93,8 +93,8 @@
 //                    | GUI | LWR | SPC |   | CTRL | RSE  | ALT |
                         display-name = "Base";
                         bindings = <
-   &kp TAB        &kp Q           &ht LG(S) W   &ht LG(C) E        &ht LG(V) R      &kp T               &kp Y &ht N1 U  &ht N2 I     &ht N3 O   &kp P         &kp BSPC
-   &ht LBRC LCTRL &ht LBKT A      &ht LPAR S    &ht RPAR D         &ht RBKT F       &ht RBRC G          &kp H &ht N4 J  &ht N5 K     &ht N6 L   &ht N0 SEMI   &kp SQT
+   &ht CAPS TAB        &kp Q           &ht LG(S) W   &ht LG(C) E        &ht LG(V) R      &kp T               &kp Y &ht N1 U  &ht N2 I     &ht N3 O   &kp P         &kp BSPC
+   &ht LBRC LCTRL &ht LBKT A      &ht LPAR S    &ht RPAR D         &ht RBKT F       &ht RBRC G          &kp H &ht N4 J  &ht N5 K     &ht N6 L   &ht N0 SEMI   &ht RCTRL SQT
    &kp LSHFT      &ht  UNDER Z    &ht EQUAL X   &ht KP_MULTIPLY C  &ht MINUS V      &ht TILDE B         &kp N &ht N7 M  &ht N8 COMMA &ht N9 DOT &kp FSLH      &ht RSHIFT ESC
                   &kp LGUI &mo 1 &kp SPACE                                                              &kp RCTRL &mo 2 &kp RALT
                         >;
