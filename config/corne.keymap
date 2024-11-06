@@ -219,7 +219,7 @@
 
         symbol_layer {
             bindings = <
-&trans  &kp EXCL         &kp AT          &kp HASH         &kp DOLLAR       &kp PRCNT    &kp CARET  &kp AMPS         &kp STAR         &kp EQUAL       &kp MINUS        &trans
+&trans  &kp EXCL         &kp AT          &kp HASH         &kp DOLLAR       &kp PRCNT    &kp CARET  &kp AMPS         &kp STAR         &kp EQUAL       &kp MINUS        &kp PRINTSCREEN
 &trans  &hml LGUI TILDE  &hml LALT LBKT  &hml LCTRL LBRC  &hml LSHFT LPAR  &kp FSLH     &kp BSLH   &hmr LSHFT RPAR  &hmr LCTRL RBRC  &hmr LALT RBKT  &hmr LGUI UNDER  &trans
 &trans  &trans           &kp MINUS       &kp EQUAL        &kp GRAVE        &kp SQT      &kp DQT    &kp MINUS        &kp PLUS         &kp EQUAL       &kp PIPE         &trans
                                          &trans           &trans           &trans       &trans     &trans           &trans
