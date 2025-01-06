@@ -18,7 +18,7 @@
         };
 
         home_row_numbers {
-            bindings = <&sl 6>;
+            bindings = <&sl 8>;
             key-positions = <36 41>;
         };
     };
@@ -42,19 +42,12 @@
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "Lower";
+        layer_7 {
             bindings = <
-&kp TAB       &trans    &kp PAGE_DOWN  &kp UP     &kp PAGE_UP     &kp C_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL        &kp BSPC
-&tog 3        &kp HOME  &kp LEFT       &kp DOWN   &kp RIGHT       &kp END              &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
-&kp LEFT_GUI  &trans    &trans         &kp LC(C)  &kp LC(V)       &kp C_VOLUME_DOWN    &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans           &trans
-                                       &trans     &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC         &trans
+&kp TAB   &trans           &kp LC(C)  &kp UP           &kp LC(V)        &kp C_VOLUME_UP      &kp EQUAL        &kp PLUS         &kp MINUS        &kp STAR         &kp FSLH         &trans
+&kp HOME  &kp KP_NUMBER_1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5      &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp ESC
+&kp LGUI  &trans           &kp LEFT   &kp DOWN         &kp RIGHT        &kp C_VOLUME_DOWN    &kp DOT          &kp DOT          &kp COMMA        &kp DOLLAR       &trans           &kp DEL
+                                      &trans           &kp T            &kp T                &kp RET          &kp BSPC         &mo 2
             >;
         };
 
@@ -89,7 +82,7 @@
 &kp TAB    &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp LALT
 &kp LCTRL  &kp A  &kp S  &kp D  &kp F      &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp ESC
 &to 5      &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
-                         &mo 1  &kp LSHFT  &kp SPACE    &kp ENTER  &kp BSPC  &to 0
+                         &mo 7  &kp LSHFT  &kp SPACE    &kp ENTER  &kp BSPC  &to 0
             >;
         };
 
@@ -98,7 +91,23 @@
 &kp ESC   &kp GRAVE         &kp Q  &kp W  &kp E  &kp R        &kp T      &kp Y     &kp U  &kp I      &kp O    &kp P
 &kp TAB   &kp LSHFT         &kp A  &kp S  &kp D  &kp F        &kp G      &kp H     &kp J  &kp K      &kp L    &kp ESC
 &kp LALT  &kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V        &kp B      &kp N     &kp M  &kp COMMA  &kp DOT  &kp DEL
-                                   &sl 6  &mo 6  &kp SPACE    &kp ENTER  &kp BSPC  &to 0
+                                   &sl 8  &mo 8  &kp SPACE    &kp ENTER  &kp BSPC  &to 0
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            display-name = "Lower";
+            bindings = <
+&kp TAB       &trans    &kp PAGE_DOWN  &kp UP     &kp PAGE_UP     &kp C_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL        &kp BSPC
+&tog 3        &kp HOME  &kp LEFT       &kp DOWN   &kp RIGHT       &kp END              &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
+&kp LEFT_GUI  &trans    &trans         &kp LC(C)  &kp LC(V)       &kp C_VOLUME_DOWN    &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans           &trans
+                                       &trans     &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC         &trans
             >;
         };
 
@@ -109,6 +118,16 @@
 &kp LCTRL  &kp N1  &kp N2         &kp N3    &kp N4          &kp N5               &kp N6     &kp N7    &kp N8     &kp N9           &kp N0         &kp ESC
 &kp LGUI   &trans  &kp LEFT       &kp DOWN  &kp RIGHT       &kp C_VOLUME_DOWN    &kp DOT    &trans    &trans     &trans           &trans         &kp DEL
                                   &trans    &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC  &trans
+            >;
+        };
+
+        layer_9 {
+            display-name = "Lower";
+            bindings = <
+&kp TAB       &trans    &kp PAGE_DOWN  &kp UP     &kp PAGE_UP     &kp C_VOLUME_UP      &kp PLUS   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL        &kp BSPC
+&tog 3        &kp HOME  &kp LEFT       &kp DOWN   &kp RIGHT       &kp END              &kp MINUS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
+&kp LEFT_GUI  &trans    &trans         &kp LC(C)  &kp LC(V)       &kp C_VOLUME_DOWN    &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans           &trans
+                                       &trans     &kp LEFT_SHIFT  &kp SPACE            &kp RET    &kp BSPC         &trans
             >;
         };
     };
