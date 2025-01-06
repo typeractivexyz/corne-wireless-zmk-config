@@ -46,7 +46,7 @@
             bindings = <
 &kp TAB   &trans           &kp LC(C)  &kp UP           &kp LC(V)        &kp C_VOLUME_UP      &kp EQUAL        &kp PLUS         &kp MINUS        &kp STAR         &kp FSLH         &trans
 &kp HOME  &kp KP_NUMBER_1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5      &kp KP_NUMBER_6  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp ESC
-&kp LGUI  &trans           &kp LEFT   &kp DOWN         &kp RIGHT        &kp C_VOLUME_DOWN    &kp DOT          &kp DOT          &kp COMMA        &kp DOLLAR       &kp HASH         &kp DEL
+&kp LGUI  &kp END          &kp LEFT   &kp DOWN         &kp RIGHT        &kp C_VOLUME_DOWN    &kp DOT          &kp DOT          &kp COMMA        &kp DOLLAR       &kp HASH         &kp DEL
                                       &trans           &kp LEFT_SHIFT   &kp SPACE            &kp RET          &kp BSPC         &mo 2
             >;
         };
