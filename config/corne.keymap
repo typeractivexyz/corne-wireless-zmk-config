@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15    // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -63,8 +63,8 @@
             display-name = "Lower";
             bindings = <
 &kp TAB    &kp N1    &kp N2  &kp N3    &kp N4     &kp N5           &kp N6          &kp N7          &kp N8        &kp N9          &kp N0           &kp BSPC
-&kp LCTRL  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp PAGE_UP      &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
-&kp LSHFT  &trans    &trans  &trans    &trans     &kp PAGE_DOWN    &msc SCRL_DOWN  &mkp LCLK       &mkp MCLK     &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans
+&kp LCTRL  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp PAGE_UP      &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&kp LSHFT  &trans    &trans  &trans    &trans     &kp PAGE_DOWN    &msc SCRL_UP    &mkp LCLK       &mkp MCLK     &msc SCRL_RIGHT &msc SCRL_LEFT   &trans
                              &kp LALT  &trans     &kp SPACE        &kp RET         &trans          &kp LGUI
             >;
         };
