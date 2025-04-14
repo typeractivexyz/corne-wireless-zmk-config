@@ -9,6 +9,34 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        HMR: HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 17 16 15 14 13 12 24 25 26 27 28 29 36 37 38 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        HML: HML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <8 6 7 9 10 11 23 22 18 19 20 21 30 31 32 33 35 34 41 40 39 38 36 37>;
+            hold-trigger-on-release;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +49,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp ESC    &kp Q                &kp W            &kp E            &kp R  &kp T        &kp Y       &kp U  &kp I             &kp O             &kp P                    &kp BSPC
+&kp TAB    &HML LEFT_CONTROL A  &HML LEFT_ALT S  &HML LEFT_WIN D  &kp F  &kp G        &kp H       &kp J  &HMR RIGHT_GUI K  &HMR RIGHT_ALT L  &HMR RIGHT_CONTROL SEMI  &kp SQT
+&kp LSHFT  &kp Z                &kp X            &kp C            &kp V  &kp B        &kp N       &kp M  &kp COMMA         &kp DOT           &kp FSLH                 &kp RETURN
+                                                 &kp LGUI         &mo 1  &kp SPACE    &kp RETURN  &mo 2  &mo 3
             >;
         };
 
@@ -37,10 +65,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp ESCAPE  &trans        &trans        &trans        &trans        &trans          &trans   &kp N7        &kp N8        &kp N9        &trans  &kp BSPC
+&kp TAB     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&kp LSHFT   &bt BT_CLR    &trans        &trans        &trans        &trans          &kp N0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                                        &kp LGUI      &trans        &kp SPACE       &kp RET  &trans        &kp RALT
             >;
         };
 
@@ -53,25 +81,19 @@
 
             display-name = "Raise";
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY   &kp LPAR         &kp RPAR  &kp BSPC
+&kp TAB     &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RBKT         &kp BSLH  &kp GRAVE
+&kp LSHFT   &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp PIPE  &kp TILDE
+                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
 
-        extra_1 { status = "reserved"; };
-
-        extra_2 { status = "reserved"; };
-
-        extra_3 { status = "reserved"; };
-
         layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans          &trans          &trans
+&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans          &kp UP_ARROW    &trans
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                &trans  &trans  &kp SPACE    &kp RET  &trans  &trans
             >;
         };
     };
