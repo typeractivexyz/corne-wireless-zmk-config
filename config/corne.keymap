@@ -41,6 +41,52 @@
             label = "TAPE";
             #binding-cells = <0>;
             bindings = <&kp E>, <&eh>;
+
+            tapping-term-ms = <100>;
+        };
+
+        tapa: tapa {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPA";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp A>, <&ah>, <&atil>;
+        };
+
+        tapi: tapi {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPI";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&ih>;
+
+            tapping-term-ms = <100>;
+        };
+
+        tapo: tapo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPO";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&oh>, <&otil>;
+
+            tapping-term-ms = <100>;
+        };
+
+        tapc: tapc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPC";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&cid>;
+
+            tapping-term-ms = <100>;
+        };
+
+        tapu: tapu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPU";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&uh>;
+
+            tapping-term-ms = <100>;
         };
     };
 
@@ -58,6 +104,48 @@
             bindings = <&kp TILDE &kp A>;
             label = "ATIL";
         };
+
+        ah: ah {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp A>;
+            label = "AH";
+        };
+
+        ih: ih {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp I>;
+            label = "IH";
+        };
+
+        oh: oh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp O>;
+            label = "OH";
+        };
+
+        uh: uh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp U>;
+            label = "UH";
+        };
+
+        otil: otil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp O>;
+            label = "OTIL";
+        };
+
+        cid: cid {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp C>;
+            label = "CID";
+        };
     };
 
     keymap {
@@ -72,10 +160,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp Q                &kp W            &tape            &kp R  &kp T        &kp Y          &kp U  &kp I             &kp O             &kp P                    &kp DELETE
-&kp TAB    &HML LEFT_CONTROL A  &HML LEFT_ALT S  &HML LEFT_WIN D  &kp F  &kp G        &kp H          &kp J  &HMR RIGHT_GUI K  &HMR RIGHT_ALT L  &HMR RIGHT_CONTROL SEMI  &kp SQT
-&kp LSHFT  &kp Z                &kp X            &kp C            &kp V  &kp B        &kp N          &kp M  &kp COMMA         &kp DOT           &kp FSLH                 &kp RETURN
-                                                 &lt 4 LEFT_GUI   &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &mo 3
+&kp ESC    &kp Q  &kp W         &tape            &kp R  &kp T        &kp Y          &tapu  &tapi             &tapo                 &kp P     &kp DELETE
+&kp TAB    &tapa  &HML LCTRL S  &HML LEFT_ALT D  &kp F  &kp G        &kp H          &kp J  &HMR RIGHT_ALT K  &HMR RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X         &tapc            &kp V  &kp B        &kp N          &kp M  &kp COMMA         &kp DOT               &kp FSLH  &kp RETURN
+                                &lt 4 LEFT_GUI   &mo 1  &kp SPACE    &kp BACKSPACE  &mo 2  &mo 3
             >;
         };
 
@@ -88,10 +176,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &trans       &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
-&kp TAB     &trans        &trans        &trans      &trans       &atil        &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
-&kp LSHFT   &kp K_UNDO    &kp K_CUT     &kp K_COPY  &kp K_PASTE  &eh          &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
-                                        &kp LGUI    &trans       &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
+&kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_CLR     &trans          &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
+&kp TAB     &trans         &trans        &trans         &trans          &trans       &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
+&kp LSHFT   &kp C_AC_UNDO  &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &trans       &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
+                                         &kp LGUI       &trans          &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
             >;
         };
 
@@ -104,19 +192,19 @@
 
             display-name = "Raise";
             bindings = <
-&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY   &kp LPAR         &kp RPAR  &kp BSPC
-&kp TAB     &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RBKT         &kp BSLH  &kp GRAVE
-&kp LSHFT   &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp PIPE  &kp TILDE
-                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET      &kp AMPS   &kp KP_MULTIPLY   &kp LPAR         &kp RPAR  &kp TILDE
+&kp TAB     &trans    &trans  &trans    &trans    &trans       &kp MINUS      &kp EQUAL  &kp LEFT_BRACKET  &kp RBKT         &kp BSLH  &kp GRAVE
+&kp LSHFT   &trans    &trans  &trans    &trans    &trans       &kp UNDER      &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp PIPE  &kp RETURN
+                              &kp LGUI  &trans    &kp SPACE    &kp BACKSPACE  &trans     &kp RALT
             >;
         };
 
         layer_6 {
             bindings = <
-&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans          &trans          &trans
-&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &trans          &kp UP_ARROW    &trans
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans   &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                                &trans  &trans  &kp SPACE    &kp RET  &trans  &trans
+&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans          &trans          &trans
+&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                &trans  &trans  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
