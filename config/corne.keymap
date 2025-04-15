@@ -40,16 +40,23 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAPE";
             #binding-cells = <0>;
-            bindings = <&kp E>, <&kp A>;
+            bindings = <&kp E>, <&eh>;
         };
     };
 
     macros {
-        EH: EH {
+        eh: eh {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp E>;
+            bindings = <&kp SINGLE_QUOTE &kp E>;
             label = "EH";
+        };
+
+        atil: atil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp A>;
+            label = "ATIL";
         };
     };
 
@@ -82,8 +89,8 @@
             display-name = "Lower";
             bindings = <
 &kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &trans       &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
-&kp TAB     &trans        &trans        &trans      &trans       &trans       &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
-&kp LSHFT   &kp K_UNDO    &kp K_CUT     &kp K_COPY  &kp K_PASTE  &trans       &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
+&kp TAB     &trans        &trans        &trans      &trans       &atil        &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
+&kp LSHFT   &kp K_UNDO    &kp K_CUT     &kp K_COPY  &kp K_PASTE  &eh          &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
                                         &kp LGUI    &trans       &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
             >;
         };
