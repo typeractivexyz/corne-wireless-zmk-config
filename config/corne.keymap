@@ -42,14 +42,14 @@
             #binding-cells = <0>;
             bindings = <&kp E>, <&eh>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
 
         tapa: tapa {
             compatible = "zmk,behavior-tap-dance";
             label = "TAPA";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             bindings = <&kp A>, <&ah>, <&atil>;
         };
 
@@ -59,7 +59,7 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&ih>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
 
         tapo: tapo {
@@ -68,7 +68,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>, <&oh>, <&otil>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
 
         tapc: tapc {
@@ -77,7 +77,7 @@
             #binding-cells = <0>;
             bindings = <&kp C>, <&cid>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
 
         tapu: tapu {
@@ -86,7 +86,7 @@
             #binding-cells = <0>;
             bindings = <&kp U>, <&uh>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -176,10 +176,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_CLR     &trans          &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
-&kp TAB     &trans         &trans        &trans         &trans          &trans       &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
-&kp LSHFT   &kp C_AC_UNDO  &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &trans       &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
-                                         &kp LGUI       &trans          &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
+&kp ESCAPE  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_CLR     &trans          &bootloader    &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
+&kp TAB     &trans         &trans        &trans         &trans          &trans         &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
+&kp LSHFT   &kp C_AC_UNDO  &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &trans         &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
+                                         &kp LGUI       &trans          &kp SPACE      &kp BACKSPACE  &trans        &kp RALT
             >;
         };
 
@@ -201,10 +201,10 @@
 
         layer_6 {
             bindings = <
-&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans          &trans          &trans
-&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                                &trans  &trans  &kp SPACE    &trans  &trans  &trans
+&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &bootloader  &trans  &trans  &trans          &trans          &trans
+&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                &trans  &trans  &kp SPACE    &trans       &trans  &trans
             >;
         };
 
