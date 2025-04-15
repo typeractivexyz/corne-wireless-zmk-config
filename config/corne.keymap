@@ -5,10 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
 
 / {
     behaviors {
@@ -155,12 +153,27 @@
 
         copy {
             bindings = <&kp LC(C)>;
-            key-positions = <37 27>;
+            key-positions = <27 26>;
         };
 
         paste {
             bindings = <&kp LC(V)>;
-            key-positions = <37 28>;
+            key-positions = <28 29>;
+        };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <24 25>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <14 15>;
+        };
+
+        comm {
+            bindings = <&kp LC(SLASH)>;
+            key-positions = <12 13>;
         };
     };
 
@@ -176,9 +189,9 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp Q  &kp W         &tape            &kp R              &kp T        &kp Y          &tapu              &tapi             &tapo                 &kp P     &kp DELETE
-&kp TAB    &tapa  &HML LCTRL S  &HML LEFT_ALT D  &HML F LEFT_SHIFT  &kp G        &kp H          &HMR LEFT_SHIFT J  &HMR RIGHT_ALT K  &HMR RIGHT_CONTROL L  &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X         &tapc            &kp V              &kp B        &kp N          &kp M              &kp COMMA         &kp DOT               &kp FSLH  &kp RETURN
+&kp ESC    &kp Q  &kp W         &kp E            &kp R              &kp T        &kp Y          &kp U              &kp I             &kp O                 &kp P     &kp DELETE
+&kp TAB    &kp A  &HML LCTRL S  &HML LEFT_ALT D  &HML LEFT_SHIFT F  &kp G        &kp H          &HMR LEFT_SHIFT J  &HMR RIGHT_ALT K  &HMR RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X         &kp C            &kp V              &kp B        &kp N          &kp M              &kp COMMA         &kp DOT               &kp FSLH  &kp RETURN
                                 &lt 4 LEFT_GUI   &mo 1              &kp SPACE    &kp BACKSPACE  &mo 2              &mo 3
             >;
         };
@@ -192,10 +205,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &trans  &bootloader    &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
-&kp TAB     &trans        &trans        &trans      &trans  &trans         &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
-&kp LSHFT   &trans        &trans        &trans      &trans  &trans         &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
-                                        &kp LGUI    &trans  &kp SPACE      &kp BACKSPACE  &trans        &kp RALT
+&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &trans  &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
+&kp TAB     &trans        &trans        &trans      &trans  &trans       &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
+&kp LSHFT   &trans        &trans        &trans      &trans  &trans       &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
+                                        &kp LGUI    &trans  &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
             >;
         };
 
@@ -217,19 +230,19 @@
 
         layer_6 {
             bindings = <
-&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &bootloader  &trans  &trans  &trans          &trans          &trans
-&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans       &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                                &trans  &trans  &kp SPACE    &trans       &trans  &trans
+&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans          &trans          &trans
+&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                &trans  &trans  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans     &trans          &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &bl BL_ON  &rgb_ug RGB_ON  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans          &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans          &trans  &trans    &trans  &trans  &trans
+&trans  &atil   &trans  &eh     &trans  &trans    &trans  &uh     &ih     &oh     &otil   &trans
+&trans  &ah     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &cid    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
