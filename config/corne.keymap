@@ -44,14 +44,14 @@
             #binding-cells = <0>;
             bindings = <&kp E>, <&eh>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         tapa: tapa {
             compatible = "zmk,behavior-tap-dance";
             label = "TAPA";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp A>, <&ah>, <&atil>;
         };
 
@@ -61,7 +61,7 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&ih>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         tapo: tapo {
@@ -70,7 +70,7 @@
             #binding-cells = <0>;
             bindings = <&kp O>, <&oh>, <&otil>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         tapc: tapc {
@@ -79,7 +79,7 @@
             #binding-cells = <0>;
             bindings = <&kp C>, <&cid>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         tapu: tapu {
@@ -88,7 +88,7 @@
             #binding-cells = <0>;
             bindings = <&kp U>, <&uh>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
     };
 
