@@ -5,67 +5,245 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    behaviors {
+        HMR: HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        display-name = "Base";
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Lower";
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Raise";
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-
-                extra_1 {
-                        status = "reserved";
-                };
-
-                extra_2 {
-                        status = "reserved";
-                };
-
-                extra_3 {
-                        status = "reserved";
-                };
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 17 16 15 14 13 12 24 25 26 27 28 29 36 37 38 39 40 41>;
+            hold-trigger-on-release;
         };
+
+        HML: HML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <8 6 7 9 10 11 23 22 18 19 20 21 30 31 32 33 35 34 41 40 39 38 36 37>;
+            hold-trigger-on-release;
+        };
+
+        tape: tape {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPE";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&eh>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tapa: tapa {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPA";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp A>, <&ah>, <&atil>;
+        };
+
+        tapi: tapi {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPI";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&ih>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tapo: tapo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPO";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&oh>, <&otil>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tapc: tapc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPC";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&cid>;
+
+            tapping-term-ms = <150>;
+        };
+
+        tapu: tapu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPU";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&uh>;
+
+            tapping-term-ms = <150>;
+        };
+    };
+
+    macros {
+        eh: eh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp E>;
+            label = "EH";
+        };
+
+        atil: atil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp A>;
+            label = "ATIL";
+        };
+
+        ah: ah {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp A>;
+            label = "AH";
+        };
+
+        ih: ih {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp I>;
+            label = "IH";
+        };
+
+        oh: oh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp O>;
+            label = "OH";
+        };
+
+        uh: uh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp U>;
+            label = "UH";
+        };
+
+        otil: otil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp O>;
+            label = "OTIL";
+        };
+
+        cid: cid {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp C>;
+            label = "CID";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <27 26>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <28 29>;
+        };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <24 25>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <14 15>;
+        };
+
+        comm {
+            bindings = <&kp LC(SLASH)>;
+            key-positions = <12 13>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+            display-name = "Base";
+            bindings = <
+&kp ESC    &kp Q            &kp W         &kp E            &kp R              &kp T            &kp Y      &kp U              &kp I             &kp O                 &kp P     &kp DELETE
+&kp TAB    &HML LEFT_WIN A  &HML LCTRL S  &HML LEFT_ALT D  &HML LEFT_SHIFT F  &kp G            &kp H      &HMR LEFT_SHIFT J  &HMR RIGHT_ALT K  &HMR RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z            &kp X         &kp C            &kp V              &kp B            &kp N      &kp M              &kp COMMA         &kp DOT               &kp FSLH  &kp RETURN
+                                          &lt 4 LEFT_GUI   &mo 1              &kp BACKSPACE    &kp SPACE  &mo 2              &mo 3
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            display-name = "Lower";
+            bindings = <
+&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &trans  &trans       &trans         &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE    &kp KP_PLUS
+&kp TAB     &trans        &trans        &trans      &trans  &trans       &trans         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MULTIPLY  &kp KP_SUBTRACT
+&kp LSHFT   &trans        &trans        &trans      &trans  &trans       &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans           &kp RETURN
+                                        &kp LGUI    &trans  &kp SPACE    &kp BACKSPACE  &trans        &kp RALT
+            >;
+        };
+
+        raise_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            display-name = "Raise";
+            bindings = <
+&kp ESCAPE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET      &kp AMPS   &kp KP_MULTIPLY   &kp LPAR         &kp RPAR  &kp TILDE
+&kp TAB     &trans    &trans  &trans    &trans    &trans       &kp MINUS      &kp EQUAL  &kp LEFT_BRACKET  &kp RBKT         &kp BSLH  &kp GRAVE
+&kp LSHFT   &trans    &trans  &trans    &trans    &trans       &kp UNDER      &kp PLUS   &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp PIPE  &kp RETURN
+                              &kp LGUI  &trans    &kp SPACE    &kp BACKSPACE  &trans     &kp RALT
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&kp ESCAPE      &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans          &trans          &trans
+&kp TAB         &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp BACKSPACE   &kp UP_ARROW    &kp DELETE
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                &trans  &trans  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &atil   &trans  &eh     &trans  &trans    &trans  &uh     &ih     &oh     &otil   &trans
+&trans  &ah     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &cid    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+    };
 };
