@@ -1,0 +1,8 @@
+/*
+ * Layer definitions for Corne keyboard
+ */
+
+#define NAV_LAYER 1
+#define SYM_LAYER 2
+#define SYSTEM_LAYER 3
+#define MOUSE_LAYER 4

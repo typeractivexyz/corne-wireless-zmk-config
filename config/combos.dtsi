@@ -1,0 +1,18 @@
+/*
+ * Combos configuration for Corne keyboard
+ */
+
+#include "layer_defs.dtsi"
+
+/ {
+    combos { 
+        compatible = "zmk,combos";
+        
+        // Toggle mouse layer when Tab and Backspace are pressed together
+        toggle_mouse_layer {
+            timeout-ms = <50>;
+            key-positions = <38 40>; // Tab (left) and Backspace (right) keys
+            bindings = <&tog MOUSE_LAYER>;
+        };
+    };
+};

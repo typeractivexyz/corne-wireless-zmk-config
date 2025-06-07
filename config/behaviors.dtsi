@@ -1,0 +1,101 @@
+/*
+ * Custom behaviors for Corne keyboard
+ */
+
+#include <dt-bindings/zmk/keys.h>
+
+// ms timings for homerow mods for each side
+#define HOMEROW_TAPPING_TERM 280
+#define HOMEROW_QUICK_TAP 150 // ca. 10500/(relaxed typing speed)
+
+&sk {
+    release-after-ms = <600>;// release after 0.6s
+    quick-release;// no double capitalization when rolling keys
+};
+
+&sl {
+    ignore-modifiers;// allow chording sticky mods & layers
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <HOMEROW_QUICK_TAP>;
+};
+
+&caps_word { /delete-property/ ignore-modifiers; };
+
+/ {
+    behaviors {
+        ht: holdtap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_HOLD_TAPS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
+            global-quick-tap;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 41 40>;
+            require-prior-idle-ms = <75>;
+        };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            require-prior-idle-ms = <75>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38>;
+        };
+
+        // tap -> sticky shift | shift + tap or double tap -> caps-word | hold -> shift
+        smart_shft: smart_shft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        gqt: global-quick-tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GLOBAL_QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // tap or hold -> LALT | double tap -> Caps Lock
+        alt_caps: alt_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_CAPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <50>;
+            bindings = <&kp LALT>, <&kp CAPS>;
+        };
+    };
+};

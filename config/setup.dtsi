@@ -1,0 +1,11 @@
+/*
+ * Main setup file that includes all configuration
+ * This file should be included in your build process but NOT in corne.keymap
+ */
+
+#include "layer_defs.dtsi"
+#include "behaviors.dtsi"
+#include "combos.dtsi"
+
+// Include the keymap last to ensure all other configurations are loaded first
+#include "corne.keymap"
